@@ -9,6 +9,9 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Header } from './globals/Header/config'
+import { Pages } from './collections/Pages'
+import { Footer } from './globals/Footer/config'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -20,7 +23,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Pages, Users, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -30,6 +33,7 @@ export default buildConfig({
     url: process.env.DATABASE_URI || '',
   }),
   sharp,
+  globals: [Header, Footer],
   plugins: [
     s3Storage({
       bucket: process.env.S3_BUCKET,

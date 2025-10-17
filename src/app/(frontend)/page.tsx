@@ -1,3 +1,3 @@
-export default async function HomePage() {
-  return <></>
-}
+import PageTemplate from './[slug]/page'
+
+export default PageTemplate

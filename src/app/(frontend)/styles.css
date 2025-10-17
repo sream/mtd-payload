@@ -1,1 +1,37 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --font-sans: var(--font-geologica);
+  --font-open-runde: var(--font-open-runde);
+}
+
+
+@theme {
+    --color-black: #1E1E1E;
+
+    --color-brown-100: #F8F3F0;
+    --color-brown-200: #DFD3C8;
+    --color-brown-300: #5B4435;
+
+    --color-brand: #D30000;
+    --color-brand-light: #FDDEE0;
+
+    --breakpoint-2xl: 90rem;
+
+    --radius: 1.25rem;
+
+    --shadow-block: 0 4px 18px 0 rgba(0, 0, 0, 0.2); 
+}
+
+@utility block-container {
+    @apply container mx-auto px-4 lg:px-8 2xl:px-22.5;
+}
+
+@utility block-offset {
+    @apply pt-5 -mt-5;
+}
+
+@utility no-scrollbar {
+    @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
